@@ -129,8 +129,8 @@
             <p class="textoDescritivo">Deslize para conhecer meus trabalhos com clientes</p>
         </div>
         
-        <!-- Carrossel -->
-        <   portfolio: {{ json_encode(array_slice($destaques, 0, 3)) }},
+        <div x-data="{ 
+            portfolio: {{ json_encode(array_slice($destaques, 0, 3)) }},
             prev() {
                 const container = document.getElementById('carrossel-portfolio');
                 container.scrollBy({ left: -400, behavior: 'smooth' });
@@ -160,7 +160,8 @@
 
             <div id="carrossel-portfolio" class="flex gap-6 overflow-x-auto scroll-smooth pb-4 md:pb-0 scrollbar-hide">
                 <template x-for="item in portfolio" :key="item.slug">
-                    <a :href="'{{ url('/portfolio') }}/projects/' + item.slug" class="flex-shrink-0 md:w-96 cardProjeto group hover:scale-105 transition-transform"enter justify-between mb-4">
+                    <a :href="'{{ url('/portfolio') }}/projects/' + item.slug" class="flex-shrink-0 md:w-96 cardProjeto group hover:scale-105 transition-transform">
+                        <div class="flex items-center justify-between mb-4">
                             <span class="text-xs text-[#A1A1AA] uppercase tracking-wider font-medium">
                                 Portfolio
                             </span>
