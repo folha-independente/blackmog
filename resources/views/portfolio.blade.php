@@ -42,7 +42,7 @@
         
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <template x-for="projeto in projetosFiltrados" :key="projeto.slug">
-                <a :href="'{{ url('/projetos') }}/' + projeto.slug" class="cardProjeto group hover:-translate-y-2 transition-all duration-300">
+                <a :href="'{{ url('/projetos') }}/' + projeto.slug" class="cardProjeto group">
                     <!-- Badge Categoria -->
                     <div class="text-xs text-[#A1A1AA] mb-4 uppercase tracking-wider">
                         <span x-text="projeto.categoria"></span>
