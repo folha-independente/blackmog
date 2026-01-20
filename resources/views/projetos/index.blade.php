@@ -15,11 +15,10 @@
             </p>
         </div>
         
-        <!-- Lista Completa -->
         <div class="space-y-6">
             @foreach($projetos as $projeto)
             <a href="{{ route('projetos.show', $projeto['slug']) }}" 
-               class="block border border-[#1F1F1F] rounded-lg p-8 hover:border-[#A1A1AA] transition-all group">
+               class="block border border-[#1F1F1F] rounded-lg p-8 hover:border-[#A1A1AA] hover:-translate-y-1 transition-all group">
                 <div class="flex flex-col md:flex-row md:items-start justify-between gap-6">
                     <div class="flex-1">
                         <!-- Categoria e Data -->
