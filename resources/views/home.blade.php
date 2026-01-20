@@ -66,6 +66,8 @@
             <div id="carrossel-projetos" class="flex gap-6 overflow-x-auto scroll-smooth pb-4 md:pb-0 scrollbar-hide">
                 <template x-for="projeto in projetos" :key="projeto.slug">
                     <a :href="'{{ url('/projetos') }}/' + projeto.slug" class="flex-shrink-0 md:w-96 cardProjeto group">
+                        <img :src="projeto.thumbnail" :alt="projeto.nome" class="w-full h-48 object-cover rounded-md mb-4 bg-[#0A0A0A]">
+                        
                         <div class="flex items-center justify-between mb-4">
                             <span class="text-xs text-[#A1A1AA] uppercase tracking-wider font-medium">
                                 <span x-text="projeto.categoria"></span>
@@ -161,6 +163,8 @@
             <div id="carrossel-portfolio" class="flex gap-6 overflow-x-auto scroll-smooth pb-4 md:pb-0 scrollbar-hide">
                 <template x-for="item in portfolio" :key="item.slug">
                     <a :href="'{{ url('/portfolio') }}/projects/' + item.slug" class="flex-shrink-0 md:w-96 cardProjeto group">
+                        <img :src="item.thumbnail" :alt="item.nome" class="w-full h-48 object-cover rounded-md mb-4 bg-[#0A0A0A]">
+                        
                         <div class="flex items-center justify-between mb-4">
                             <span class="text-xs text-[#A1A1AA] uppercase tracking-wider font-medium">
                                 Portfolio

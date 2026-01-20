@@ -18,10 +18,11 @@
         <div class="space-y-6">
             @foreach($projetos as $projeto)
             <a href="{{ route('projetos.show', $projeto['slug']) }}" 
-               class="block border border-[#1F1F1F] rounded-lg p-8 hover:border-[#A1A1AA] transition-all group">
-                <div class="flex flex-col md:flex-row md:items-start justify-between gap-6">
-                    <div class="flex-1">
-                        <!-- Categoria e Data -->
+               class="block border border-[#1F1F1F] rounded-lg overflow-hidden hover:border-[#A1A1AA] transition-all group">
+                <div class="md:flex md:gap-6">
+                    <img src="{{ $projeto['thumbnail'] }}" alt="{{ $projeto['nome'] }}" class="w-full md:w-64 h-48 object-cover bg-[#0A0A0A]">
+                    
+                    <div class="flex-1 p-8">
                         <div class="flex items-center gap-4 mb-3">
                             <span class="text-xs text-[#A1A1AA] uppercase tracking-wider font-medium">
                                 {{ $projeto['categoria'] }}
@@ -31,12 +32,11 @@
                             @endif
                         </div>
                         
-                        <!-- Título -->
                         <h3 class="text-2xl font-bold mb-3 group-hover:text-[#A1A1AA] transition-colors">
                             {{ $projeto['nome'] }}
                         </h3>
                         
-                        <!-- Descrição -->
+
                         <p class="text-[#A1A1AA] mb-4 leading-relaxed">
                             {{ $projeto['descricao_curta'] }}
                         </p>

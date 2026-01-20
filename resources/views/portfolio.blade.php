@@ -43,12 +43,12 @@
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <template x-for="projeto in projetosFiltrados" :key="projeto.slug">
                 <a :href="'{{ url('/projetos') }}/' + projeto.slug" class="cardProjeto group">
-                    <!-- Badge Categoria -->
+                    <img :src="projeto.thumbnail" :alt="projeto.nome" class="w-full h-48 object-cover rounded-md mb-4 bg-[#0A0A0A]">
+                    
                     <div class="text-xs text-[#A1A1AA] mb-4 uppercase tracking-wider">
                         <span x-text="projeto.categoria"></span>
                     </div>
                     
-                    <!-- Título -->
                     <h3 class="text-2xl font-bold mb-4 group-hover:text-[#A1A1AA] transition-colors">
                         <span x-text="projeto.nome"></span>
                     </h3>
