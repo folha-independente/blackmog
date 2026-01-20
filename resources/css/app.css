@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+@import 'tailwindcss';
+
+@theme {
+    --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+        'Segoe UI Symbol', 'Noto Color Emoji';
+    --color-preto-principal: #000000;
+    --color-preto-suave: #0A0A0A;
+    --color-cinza-card: #111111;
+    --color-branco: #FFFFFF;
+    --color-cinza-texto: #A1A1AA;
+    --color-borda: #1F1F1F;
+    --color-azul-tech: #3B82F6;
+    --color-verde: #10B981;
+    --color-vermelho: #EF4444;
+}
+
+@layer components {
+  .containerPrincipal {
+    @apply max-w-7xl mx-auto px-6 lg:px-8;
+  }
+  
+  .cardProjeto {
+    @apply bg-[#111111] border border-[#1F1F1F] rounded-lg p-6 
+           hover:border-[#A1A1AA] transition-all duration-300 cursor-pointer overflow-hidden;
+  }
+  
+  .linkPrincipal {
+    @apply text-branco hover:text-[#A1A1AA] transition-colors duration-200;
+  }
+
+  .linkSecundario {
+    @apply text-[#A1A1AA] hover:text-branco transition-colors duration-200;
+  }
+  
+  .botaoPrimario {
+    @apply px-6 py-3 bg-branco text-black rounded-lg font-medium
+           hover:bg-[#A1A1AA] transition-all duration-200;
+  }
+  
+  .botaoSecundario {
+    @apply px-6 py-3 border border-[#1F1F1F] rounded-lg font-medium
+           hover:border-branco transition-all duration-200;
+  }
+  
+  .tituloPrincipal {
+    @apply text-6xl md:text-7xl lg:text-8xl font-black tracking-tight;
+  }
+  
+  .tituloSecao {
+    @apply text-4xl md:text-5xl font-bold tracking-tight;
+  }
+  
+  .textoDescritivo {
+    @apply text-lg text-[#A1A1AA] leading-relaxed;
+  }
+}
+
+@layer base {
+  body {
+    @apply bg-black text-white font-sans antialiased;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
